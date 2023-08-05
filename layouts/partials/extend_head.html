@@ -1,4 +1,17 @@
-{{- /* Head custom content area start */ -}}
-{{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
-{{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
-{{- /* Head custom content area end */ -}}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <title></title>
+</head>
+
+<body>
+  {{ if .Page.Store.Get "needMermaid" -}} <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "base",
+  });
+  </script>{{ end -}} {{- /* Head custom content area start */ -}} {{- /* Insert any custom code (web-analytics, resources, etc.) - it will appear in the section of every page. */ -}} {{- /* Can be overwritten by partial with the same name in the global layouts. */ -}} {{- /* Head custom content area end */ -}}
+</body>
+</html>
