@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="player-wrapper" class="{{ .Get 1 }}"></div>
+  <div id="player-wrapper-{{ .Get 2 }}" class="{{ .Get 1 }}"></div>
 </div>
 
 <script 
@@ -9,7 +9,7 @@
 </script>
 
 <script>
-  var playerElement = document.getElementById("player-wrapper");
+  var playerElement = document.getElementById("player-wrapper-{{ .Get 2 }}");
 
   var player = new Clappr.Player({
     source: {{ .Get 0 }},
